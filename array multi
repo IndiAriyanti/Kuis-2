@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class ArrayMulti {
+    public static void main(String[]args){
+        Scanner s = new Scanner (System.in);
+        System.out.println("Program Barang dan Harga");
+        int jumlahdata;
+        System.out.print("Masukkan Jumlah Data: ");
+        jumlahdata=s.nextInt();
+        
+        String[]barang=new String[jumlahdata];
+        for (int i=0; i<jumlahdata; i++){
+            System.out.println("Input Barang Ke- "+(i+1)+": ");
+            barang[i] = s.next();
+        }
+        String[]harga=new String[jumlahdata];
+        for (int j=0; j<jumlahdata; j++){
+            System.out.println("Input Harga Barang Ke- "+(j+1)+": ");
+            harga[j] = s.next();
+        }
+        int total = 0;
+        for(int i=0; i<jumlahdata; i++){
+            for(int j=0; j<jumlahdata; j++){
+                total[i][j] = barang[i] + harga[j];
+            }
+        }
+        
+        
+    }
+    
+}
