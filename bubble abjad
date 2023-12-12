@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class BubbleAbjad {
+    public static void main(String[] args) {
+        //TODO code application logic here
+        //mengurutkan barang sesuai abjad
+        Scanner s = new Scanner(System.in);
+        System.out.println("Mengurutkan Barang Sesuai Abjad");
+        int jumlahdata;
+        System.out.print("Masukkan Jumlah Data : ");
+        jumlahdata=s.nextInt();
+        //inputkan Barang
+        String[]barang=new String[jumlahdata];//Deklarasikan variabel array untuk menyimpan data
+        for (int a=0; a<jumlahdata; a++)
+        {
+            System.out.print("Barang Ke- "+(a+1)+" : ");
+            barang[a]= s.next();
+            
+            
+        }
+        System.out.println();
+        //tampilkan data sebelum disorting
+        System.out.println("Data Sebelum di Sorting : ");
+        for (int a=0; a<jumlahdata; a++)
+            System.out.print(barang[a]+" ");
+        //proses bubble sorting
+        System.out.println();
+        System.out.println("Proses Bubble Sort");
+        for (int a=0; a<barang.length;a++)
+        {
+            //tampilkan proses iterasi 
+            System.out.println("Iterasi Ke- "+(a+1)+ " : ");
+            for (int b=0; b<barang.length-1; b++)
+            {
+                if(barang[b].compareTo(barang[b+1])>0)
+                {
+                    //proses pertukaran
+                    String temp = barang[b];// variabel sebagai pihak ketiga
+                    barang[b]=barang[b+1];
+                    barang[b+1]=temp;
+                }
+                if(b<barang.length-(a+b))
+                {
+                    for(int c=0; c<barang.length; c++)
+                        System.out.print(barang[c]+" ");  
+                    System.out.println();
+                }   
+            }
+            System.out.println(" ");
+    }
+    //Tampilkan data setelah di sorting
+    System.out.print("Data Setelah di Sorting : ");
+    for(int a=0; a<barang.length;a++)
+        System.out.print(barang[a]+" ");
+    }
+}
